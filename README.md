@@ -39,7 +39,7 @@ from blacksnowapi import SmartHouseAPI
 house = SmartHouseAPI("YOUR_HOUSE_ID")
 ```
 
-* `YOUR_HOUSE_ID`: The unique ID assigned to your smart house. You can obtain it from [Black Snow Smart House Labs](https://black-snow.onrender.com/labs/smart-house).
+* `YOUR_HOUSE_ID`: The unique 5-letter ID assigned to your smart house. You can obtain it from [Black Snow Smart House Labs](https://black-snow.onrender.com/labs/smart-house).
 * Required before calling any method.
 
 # Features
@@ -64,7 +64,8 @@ house.light_off("bedroom")
 house.toggle_light("kitchen")
 ```
 
-* `room`: Name of the room (string)
+* `room`: One of the following strings: `"living"`, `"bedroom"`, `"kitchen"`, `"office"`, `"outdoor"`
+
 
 ## Fan
 
@@ -80,7 +81,8 @@ house.fan_on("living")
 house.fan_off("bedroom")
 ```
 
-* `room`: Name of the room (string)
+* `room`: Same as lights: `"living"`, `"bedroom"`, `"kitchen"`, `"office"`, `"outdoor"`
+* Value: `True` = on, `False` = off
 
 ## Alarm
 
@@ -95,6 +97,9 @@ house.alarm_on()
 ```python
 house.alarm_off()
 ```
+
+* Value: `True` = on, `False` = off
+
 
 ## Door
 
@@ -116,7 +121,7 @@ house.close_door()
 house.toggle_door()
 ```
 
-Automatically checks current door state and switches it.
+* Value: `True` = open, `False` = closed
 
 ## Blinds
 
@@ -128,11 +133,8 @@ house.set_blinds("bedroom", 0)
 house.set_blinds("kitchen", 100)
 ```
 
-* `room`: Room name (string)
-* `percentage`: 0–100
-
-  * 0 = fully open
-  * 100 = fully closed
+* `room`: `"living"`, `"bedroom"`, `"kitchen"`
+* `percentage`: Integer between 0–100 (0 = fully open, 100 = fully closed)
 
 ### Fully Open Blinds
 
@@ -156,8 +158,9 @@ house.set_thermostat("cooling", 70)
 house.set_thermostat("off", 65)
 ```
 
-* `mode`: `"heating"`, `"cooling"`, or `"off"`
-* `target`: Temperature between 60–85
+* `mode`: `"heating"`, `"cooling"`, `"off"`
+* `target`: Number between 60–85
+
 
 ## Utility
 
@@ -174,7 +177,7 @@ Pauses execution for a number of seconds.
 ```python
 from blacksnowapi import SmartHouseAPI
 
-house = SmartHouseAPI("sY9ZX")
+house = SmartHouseAPI("ABCDE")
 
 # Lights
 house.light_on("living")
@@ -208,9 +211,11 @@ house.set_thermostat("off", 65)
 # Notes
 
 * A valid `house_id` is required when creating `SmartHouseAPI`. You can obtain it from [Black Snow Smart House Labs](https://black-snow.onrender.com/labs/smart-house).
-* Room names must match your house configuration.
+* Room names must match your house configuration: `"living"`, `"bedroom"`, `"kitchen"`, `"office"`, `"outdoor"`.
 * Blinds percentage must be between 0–100.
 * Thermostat temperature must be between 60–85.
+* Thermostat mode must be `"heating"`, `"cooling"`, or `"off"`.
+* Lights, fan, alarm, and door values are boolean (`True` = on/open, `False` = off/closed).
 * Version 1.0.0 uses a class-based interface (older function-based versions are deprecated).
 
 ```
