@@ -11,12 +11,11 @@ BlacksnowAPI v1.0.0 introduces a clean, class-based interface for controlling:
 * Blinds
 * Thermostat
 
-
 ## Installation
 
 ```bash
 pip install blacksnowapi
-```
+````
 
 ## Quick Start
 
@@ -40,11 +39,10 @@ from blacksnowapi import SmartHouseAPI
 house = SmartHouseAPI("YOUR_HOUSE_ID")
 ```
 
-* `YOUR_HOUSE_ID`: The unique ID assigned to your smart house.
+* `YOUR_HOUSE_ID`: The unique ID assigned to your smart house. You can obtain it from [Black Snow Smart House Labs](https://black-snow.onrender.com/labs/smart-house).
 * Required before calling any method.
 
 # Features
-
 
 ## Lights
 
@@ -161,7 +159,6 @@ house.set_thermostat("off", 65)
 * `mode`: `"heating"`, `"cooling"`, or `"off"`
 * `target`: Temperature between 60–85
 
-
 ## Utility
 
 ### Wait
@@ -210,8 +207,10 @@ house.set_thermostat("off", 65)
 
 # Notes
 
-* A valid `house_id` is required when creating `SmartHouseAPI`.
+* A valid `house_id` is required when creating `SmartHouseAPI`. You can obtain it from [Black Snow Smart House Labs](https://black-snow.onrender.com/labs/smart-house).
 * Room names must match your house configuration.
 * Blinds percentage must be between 0–100.
 * Thermostat temperature must be between 60–85.
 * Version 1.0.0 uses a class-based interface (older function-based versions are deprecated).
+
+```
