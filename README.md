@@ -11,15 +11,12 @@ BlacksnowAPI v1.0.0 introduces a clean, class-based interface for controlling:
 * Blinds
 * Thermostat
 
----
 
 ## Installation
 
 ```bash
 pip install blacksnowapi
 ```
-
----
 
 ## Quick Start
 
@@ -32,8 +29,6 @@ house.light_on("living")
 house.fan_on("bedroom")
 house.set_thermostat("cooling", 72)
 ```
-
----
 
 ## Setup
 
@@ -48,11 +43,8 @@ house = SmartHouseAPI("YOUR_HOUSE_ID")
 * `YOUR_HOUSE_ID`: The unique ID assigned to your smart house.
 * Required before calling any method.
 
----
-
 # Features
 
----
 
 ## Lights
 
@@ -76,8 +68,6 @@ house.toggle_light("kitchen")
 
 * `room`: Name of the room (string)
 
----
-
 ## Fan
 
 ### Turn Fan On
@@ -94,8 +84,6 @@ house.fan_off("bedroom")
 
 * `room`: Name of the room (string)
 
----
-
 ## Alarm
 
 ### Turn Alarm On
@@ -109,8 +97,6 @@ house.alarm_on()
 ```python
 house.alarm_off()
 ```
-
----
 
 ## Door
 
@@ -133,8 +119,6 @@ house.toggle_door()
 ```
 
 Automatically checks current door state and switches it.
-
----
 
 ## Blinds
 
@@ -164,8 +148,6 @@ house.blinds_open("living")
 house.blinds_close("bedroom")
 ```
 
----
-
 ## Thermostat
 
 ### Set Thermostat
@@ -179,7 +161,6 @@ house.set_thermostat("off", 65)
 * `mode`: `"heating"`, `"cooling"`, or `"off"`
 * `target`: Temperature between 60–85
 
----
 
 ## Utility
 
@@ -190,8 +171,6 @@ house.wait(5)
 ```
 
 Pauses execution for a number of seconds.
-
----
 
 # Full Example
 
@@ -228,8 +207,6 @@ house.set_thermostat("heating", 72)
 house.set_thermostat("cooling", 70)
 house.set_thermostat("off", 65)
 ```
-
----
 
 # Notes
 
