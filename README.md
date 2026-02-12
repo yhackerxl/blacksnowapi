@@ -217,5 +217,3 @@ house.set_thermostat("off", 65)
 * Thermostat mode must be `"heating"`, `"cooling"`, or `"off"`.
 * Lights, fan, alarm, and door values are boolean (`True` = on/open, `False` = off/closed).
 * Version 1.0.0 uses a class-based interface (older function-based versions are deprecated).
-
-```
