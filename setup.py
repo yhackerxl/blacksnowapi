@@ -6,7 +6,7 @@ long_description = (this_directory / "README.md").read_text(encoding="utf-8")
 
 setup(
     name="blacksnowapi",
-    version="1.0.0",
+    version="2.0.1",
     packages=find_packages(),
     install_requires=[
         "requests>=2.0.0"
