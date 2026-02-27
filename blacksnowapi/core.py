@@ -3,7 +3,7 @@ import time
 
 
 class SmartHouseAPI:
-    BASE_URL = "https://black-snow.onrender.com/api/house"
+    BASE_URL = "https://muqsit.io/labs/smart-house"
 
     def __init__(self, house_id):
         if not house_id:
